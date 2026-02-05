@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-* { box-sizing: border-box; user-select: none; margin: 0; padding: 0; }
+* { 
+    box-sizing: border-box; 
+    user-select: none; 
+    margin: 0; 
+    padding: 0; 
+    -webkit-tap-highlight-color: transparent; 
+}
 
 body {
     background: radial-gradient(circle, #051622 0%, #000000 100%);
@@ -19,13 +25,14 @@ body {
     flex-wrap: wrap;
     align-content: flex-start;
     gap: 15px;
-    background: url('https://w.wallhaven.cc/full/85/wallhaven-85m88y.jpg') no-repeat center center; /* Můžeš si dát vlastní URL tapety */
+    background: url('https://w.wallhaven.cc/full/85/wallhaven-85m88y.jpg') no-repeat center center;
     background-size: cover;
 }
 
+/* Ikony */
 .icon {
-    width: 100px;
-    height: 110px;
+    width: 90px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -34,15 +41,15 @@ body {
 }
 
 .icon-box {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     background: rgba(0, 242, 255, 0.1);
     border: 1px solid rgba(0, 242, 255, 0.4);
     border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
+    font-size: 28px;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
 }
@@ -50,79 +57,97 @@ body {
 .icon:hover .icon-box {
     background: rgba(0, 242, 255, 0.3);
     box-shadow: 0 0 25px #00f2ff;
-    transform: scale(1.05);
 }
 
 .icon span {
-    margin-top: 10px;
-    font-size: 11px;
+    margin-top: 8px;
+    font-size: 10px;
     text-shadow: 0 0 5px #00f2ff;
     text-transform: uppercase;
+    text-align: center;
 }
 
-/* OKNA */
+/* Okna */
 .window {
     position: absolute;
     width: 450px;
-    min-height: 300px;
+    min-height: 250px;
     background: rgba(0, 10, 20, 0.9);
     border: 1px solid #00f2ff;
-    box-shadow: 0 0 40px rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     z-index: 10;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
+    animation: openWin 0.3s ease-out;
+}
+
+@keyframes openWin {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .window-header {
-    background: rgba(0, 242, 255, 0.2);
-    padding: 10px 15px;
+    background: rgba(0, 242, 255, 0.15);
+    padding: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: move;
-    border-bottom: 1px solid #00f2ff;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.5);
 }
 
-.window-title { font-size: 12px; font-weight: bold; }
+.window-title { font-size: 11px; letter-spacing: 1px; }
 
-.close-btn { 
-    color: #ff4d4d; 
-    cursor: pointer; 
-    font-weight: bold; 
-    font-size: 18px;
-}
+.close-btn { color: #ff4d4d; cursor: pointer; font-size: 20px; font-weight: bold; }
 
 .window-content {
-    padding: 20px;
+    padding: 15px;
     color: #fff;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     font-size: 14px;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .terminal-text { color: #00ff41; font-family: monospace; }
 
-/* TASKBAR */
+/* Lišta */
 #taskbar {
     height: 55px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     border-top: 2px solid #00f2ff;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 15px;
     justify-content: space-between;
-    backdrop-filter: blur(10px);
 }
 
 #start-btn {
     background: transparent;
     border: 1px solid #00f2ff;
     color: #00f2ff;
-    padding: 8px 15px;
+    padding: 6px 12px;
     font-family: 'Orbitron';
+    font-size: 12px;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
 }
 
-#clock { font-size: 14px; color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
+#clock { font-size: 13px; color: #00f2ff; }
+
+/* Mobilní úpravy */
+@media (max-width: 600px) {
+    .window {
+        width: 96vw !important;
+        height: 70vh !important;
+        left: 2vw !important;
+        top: 5vh !important;
+    }
+    
+    #desktop {
+        justify-content: flex-start;
+        align-content: center;
+        padding-top: 40px;
+    }
+}
