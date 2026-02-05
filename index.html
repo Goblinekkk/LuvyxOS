@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luvyx OS | Futuristické rozhraní</title>
+    <title>Luvyx OS | Next-Gen Interface</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main id="desktop">
-        <div class="icon" onclick="openApp('system-info')">
-            <div class="icon-box">🛸</div>
+    <div id="desktop">
+        <div class="icon" onclick="openApp('system', 'Systémové Informace', 'Vítejte v Luvyx OS v1.0. Systém běží na jádru GitHub Pages. Všechny systémy jsou nominální.')">
+            <div class="icon-box">🛡️</div>
             <span>Systém</span>
         </div>
-        
-        <div class="icon" onclick="openApp('terminal')">
-            <div class="icon-box">💾</div>
+
+        <div class="icon" onclick="openApp('terminal', 'Terminál', '<div class=\'terminal-text\'>root@luvyx_os:~$ inicializace... <br> Připraven k příkazům...</div>')">
+            <div class="icon-box">📟</div>
             <span>Terminál</span>
         </div>
 
+        <div class="icon" onclick="openApp('files', 'Moje Soubory', 'Složka je prázdná. Nahrajte data do cloudu.')">
+            <div class="icon-box">📁</div>
+            <span>Soubory</span>
+        </div>
+
         <div id="window-layer"></div>
-    </main>
+    </div>
 
     <footer id="taskbar">
-        <button id="start-btn">LUVYX</button>
+        <button id="start-btn" onclick="toggleStartMenu()">LUVYX</button>
+        <div id="active-apps"></div>
         <div id="clock">00:00:00</div>
     </footer>
 
