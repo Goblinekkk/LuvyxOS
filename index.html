@@ -2,24 +2,24 @@
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Luvyx OS | Next-Gen Interface</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="desktop">
-        <div class="icon" onclick="openApp('system', 'Systémové Informace', 'Vítejte v Luvyx OS v1.0. Systém běží na jádru GitHub Pages. Všechny systémy jsou nominální.')">
+        <div class="icon" onclick="openApp('system', 'Systém', 'Luvyx OS v1.1<br>Stav: Nominální<br>Host: GitHub Pages<br>Režim: Futuristický')">
             <div class="icon-box">🛡️</div>
             <span>Systém</span>
         </div>
 
-        <div class="icon" onclick="openApp('terminal', 'Terminál', '<div class=\'terminal-text\'>root@luvyx_os:~$ inicializace... <br> Připraven k příkazům...</div>')">
+        <div class="icon" onclick="openApp('terminal', 'Terminál', '<div class=\'terminal-text\'>root@luvyx:~$ inicializace...<br>Linka zabezpečena.<br>Čekám na příkaz...</div>')">
             <div class="icon-box">📟</div>
             <span>Terminál</span>
         </div>
 
-        <div class="icon" onclick="openApp('files', 'Moje Soubory', 'Složka je prázdná. Nahrajte data do cloudu.')">
+        <div class="icon" onclick="openApp('files', 'Soubory', 'Disk C:/ je prázdný. Žádná data nenalezena.')">
             <div class="icon-box">📁</div>
             <span>Soubory</span>
         </div>
@@ -28,8 +28,7 @@
     </div>
 
     <footer id="taskbar">
-        <button id="start-btn" onclick="toggleStartMenu()">LUVYX</button>
-        <div id="active-apps"></div>
+        <button id="start-btn">LUVYX</button>
         <div id="clock">00:00:00</div>
     </footer>
 
