@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luvyx OS | Futuristické rozhraní</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="desktop">
+        <div class="icon" onclick="openApp('system-info')">
+            <div class="icon-box">🛸</div>
+            <span>Systém</span>
+        </div>
+        
+        <div class="icon" onclick="openApp('terminal')">
+            <div class="icon-box">💾</div>
+            <span>Terminál</span>
+        </div>
+
+        <div id="window-layer"></div>
+    </main>
+
+    <footer id="taskbar">
+        <button id="start-btn">LUVYX</button>
+        <div id="clock">00:00:00</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
